@@ -22,7 +22,7 @@ app.post("/payment/create", async (req, res) => {
       // console.log("payment reseve", total);
       // res.send(total);
       const paymentIntent = await stripe.paymentIntents.create({
-        amount: total,
+        amount: parseInt(total) ,
         currency: "usd",
       });
       console.log(paymentIntent);
